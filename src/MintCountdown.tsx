@@ -32,7 +32,7 @@ const DoneContainer = styled("span")(({ theme }) => ({
   alignContent: "center",
   alignItems: "center",
   justifyContent: "center",
-  background: "#384457",
+  background: "green",
   color: "white",
   borderRadius: 5,
   fontWeight: "bold",

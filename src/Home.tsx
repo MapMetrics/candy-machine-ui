@@ -25,7 +25,7 @@ import {
   mintOneToken,
   SetupState,
 } from "./candy-machine";
-import { AlertState, formatNumber, getAtaForMint, toDate } from "./utils";
+import { AlertState, getAtaForMint, toDate } from "./utils";
 import { MintCountdown } from "./MintCountdown";
 import { MintButton } from "./MintButton";
 import { GatewayProvider } from "@civic/solana-gateway-react";
@@ -37,7 +37,7 @@ const ConnectButton = styled(WalletDialogButton)`
   height: 60px;
   margin-top: 10px;
   margin-bottom: 5px;
-  background: linear-gradient(180deg, #604ae5 0%, #813eee 100%);
+  background: linear-gradient(180deg, #375877 0%, #375877 100%);
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -465,15 +465,35 @@ const Home = (props: HomeProps) => {
     })();
   }, [refreshCandyMachineState]);
 
+  const Imige = styled("img")`
+  width: 100%;
+  height:100%; 
+
+  `
+
   return (
-    <Container style={{ marginTop: 100 }}>
-      <Container maxWidth="xs" style={{ position: "relative" }}>
+    <Container style={{backgroundColor: "white", marginTop: 100 }}>
+      <Container maxWidth="xs" style={{ backgroundColor: "white" , position: "relative" }}>
+        <Imige src="http://mapmetrics.org/wp-content/uploads/2023/01/Logo-Transparent-03.png" alt="iPhone"/>
+        <Typography
+            variant="caption"
+            align="center"
+            display="block"
+            style={{ marginTop: 7, color: "grey", padding: "20px",fontSize:"14px"   }}
+          >
+           Mint your MapMetrics stake NFT [Bronze Package] <br/>
+            
+           Minimum stake period [3] month <br/>
+             
+
+          </Typography>
         <Paper
           style={{
             padding: 24,
             paddingBottom: 10,
-            backgroundColor: "#151A1F",
+            backgroundColor: "#DDDCDD",
             borderRadius: 6,
+            
           }}
         >
           {!connected ? (
@@ -499,12 +519,12 @@ const Home = (props: HomeProps) => {
                   wrap="nowrap"
                 >
                   <Grid item xs={3}>
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body2" color="black">
                       Remaining
                     </Typography>
                     <Typography
                       variant="h6"
-                      color="textPrimary"
+                      color="black"
                       style={{
                         fontWeight: "bold",
                       }}
@@ -513,21 +533,17 @@ const Home = (props: HomeProps) => {
                     </Typography>
                   </Grid>
                   <Grid item xs={4}>
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body2" color="black">
                       {isWhitelistUser && discountPrice
                         ? "Discount Price"
                         : "Price"}
                     </Typography>
                     <Typography
                       variant="h6"
-                      color="textPrimary"
+                      color="black"
                       style={{ fontWeight: "bold" }}
                     >
-                      {isWhitelistUser && discountPrice
-                        ? `◎ ${formatNumber.asNumber(discountPrice)}`
-                        : `◎ ${formatNumber.asNumber(
-                            candyMachine.state.price
-                          )}`}
+                      {`◎ 50.000`}
                     </Typography>
                   </Grid>
                   <Grid item xs={5}>
@@ -554,7 +570,7 @@ const Home = (props: HomeProps) => {
                         <MintCountdown
                           key="goLive"
                           date={getCountdownDate(candyMachine)}
-                          style={{ justifyContent: "flex-end" }}
+                          style={{ justifyContent: "flex-end",color:"black" }}
                           status={
                             candyMachine?.state?.isSoldOut ||
                             (endDate && Date.now() > endDate.getTime())
