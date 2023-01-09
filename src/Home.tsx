@@ -481,9 +481,9 @@ const Home = (props: HomeProps) => {
             display="block"
             style={{ marginTop: 7, color: "grey", padding: "20px",fontSize:"14px"   }}
           >
-           Mint your MapMetrics stake NFT [Gold Package] <br/>
+           Mint your MapMetrics stake NFT [Bronze Package] <br/>
             
-           Minimum stake period [6] months <br/>
+           Minimum stake period [3] month <br/>
              
 
           </Typography>
@@ -543,7 +543,7 @@ const Home = (props: HomeProps) => {
                       color="black"
                       style={{ fontWeight: "bold" }}
                     >
-                      {`◎ 150.000`}
+                      {`◎ 50.000`}
                     </Typography>
                   </Grid>
                   <Grid item xs={5}>
